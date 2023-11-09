@@ -1,22 +1,42 @@
-import react from 'react';
-import styled from 'styled-components';
+import React, {useState} from "react";
 import { Outlet } from "react-router-dom";
-import axios from "axios"
+import styled from "styled-components";
 
-function header() {
+const Header = () => {
+  const [token, setToken] = useState("")
   return (
     <>
-      <Container>
-        <div></div>
-      </Container>
+      <_Header>
+          <_Logo src="img/logo.png" alt="" />
+          <_RoomLet src="img/roomlet.png" alt="" />
+          <_Home src="img/home.png" alt="" />
+      </_Header>
       <Outlet />
-    </> 
+    </>
   )
-};
+}
 
-const Container = styled.div`
+const _Header = styled.div`
+  display: flex;
+  align-items: center;
   width: 100%;
   height: 100px;
-  background-color: #000000;
 `
-export default header;
+
+const _Logo = styled.img`
+  width: 90px;
+  height: 57px;
+  margin: 0 10px 0 60px;
+`
+
+const _RoomLet = styled.img`
+  width: 190px;
+  height: 40px;
+`
+
+const _Home = styled.img`
+  width:30px;
+  height: 30px;
+  margin-left: 1420px;
+`
+export default Header;
