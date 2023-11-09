@@ -21,6 +21,10 @@ const _Header = styled.div`
   align-items: center;
   width: 100%;
   height: 100px;
+<<<<<<< Updated upstream
+=======
+  background-color: #fff;
+>>>>>>> Stashed changes
 `
 
 const _Logo = styled.img`
