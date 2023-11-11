@@ -95,7 +95,7 @@ const Input_top = styled.input`
   height: 8.7vh;
   border-radius: 30px 30px 0px 0px;
   border: none;
-  border-bottom: solid 0.5px black;
+  border-bottom: solid 1px black;
   font-size: 1.2em;
   padding: 0vh 1vw 0vh 1vw;
   &:focus {
@@ -107,7 +107,6 @@ const Input_bottom = styled.input`
   height: 8.7vh;
   border-radius: 0px 0px 30px 30px;
   border: none;
-  border-top: solid 0.5px black;
   font-size: 1.2em;
   padding: 0vh 1vw 0vh 1vw;
   &:focus {
