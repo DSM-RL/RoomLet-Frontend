@@ -1,15 +1,16 @@
 import React, {useState} from "react";
 import { Outlet } from "react-router-dom";
 import styled from "styled-components";
+import Logo from "../img/logo";
+import Home from "../img/home";
 
 const Header = () => {
   const [token, setToken] = useState("")
   return (
     <>
       <_Header>
-          <_Logo src="img/logo.png" alt="" />
-          <_RoomLet src="img/roomlet.png" alt="" />
-          <_Home src="img/home.png" alt="" />
+          <_Logo/>
+          <_Home/>
       </_Header>
       <Outlet />
     </>
@@ -19,28 +20,14 @@ const Header = () => {
 const _Header = styled.div`
   display: flex;
   align-items: center;
-  width: 100%;
-  height: 100px;
-<<<<<<< Updated upstream
-=======
+  justify-content: space-between;
+  width: 100;
+  height: 10vh;
   background-color: #fff;
->>>>>>> Stashed changes
+  padding: 0vh 5vw;
 `
-
-const _Logo = styled.img`
-  width: 90px;
-  height: 57px;
-  margin: 0 10px 0 60px;
-`
-
-const _RoomLet = styled.img`
-  width: 190px;
-  height: 40px;
-`
-
-const _Home = styled.img`
-  width:30px;
-  height: 30px;
-  margin-left: 1420px;
+const _Logo = styled(Logo)``
+const _Home = styled(Home)`
+  
 `
 export default Header;
