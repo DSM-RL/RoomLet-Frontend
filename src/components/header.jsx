@@ -27,7 +27,5 @@ const _Header = styled.div`
   padding: 0vh 5vw;
 `
 const _Logo = styled(Logo)``
-const _Home = styled(Home)`
-  
-`
+const _Home = styled(Home)``
 export default Header;
