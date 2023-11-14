@@ -1,10 +1,49 @@
 import { useMediaQuery } from 'react-responsive';
-import react from 'react';
+import react, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import axios from "axios"
 
 function MainPage() {
   const size = useMediaQuery({ maxWidth: 1100 });
+  const token = useState("");
+
+  const onClickCheck = () => {
+    window.location.assign("/");
+  };
+
+  const onClickLink = (e) => {
+    const key = e.currentTarget.getAttribute("name");
+    console.log(key);
+    switch (key) {
+      case '서울':
+        window.location.assign("/seoul");
+        break;
+      case '인천':
+        window.location.assign("/incheon");
+        break;
+      case '부산':
+        window.location.assign("/bussan");
+        break;
+      case '대구':
+        window.location.assign("/daegu");
+        break;
+      case '대전':
+        window.location.assign("/daejeon");
+        break;
+      case '울산':
+        window.location.assign("/ulsan");
+        break;
+      case '광주':
+        window.location.assign("/gwangju");
+        break;
+      case '제주도':
+        window.location.assign("/jejudo");
+        break;
+      default:
+        break;
+    }
+  };
+
   return (
     <>
     {size ? (
@@ -17,37 +56,37 @@ function MainPage() {
           <SelectFont>여행지</SelectFont>
           <SelectFontStory>대한민국 어디서든, 현대적인 도시부터 아름다운 자연까지 다양한 경험을 즐길 수 있어요.</SelectFontStory>
           <SelectImgDivInDivMin>
-            <SelectImgDivMin>
+            <SelectImgDivMin name="서울" onClick={token ? onClickLink : onClickCheck}>
               <SelectImgMin src='img/서울.png' />
               <SelectImgFont>서울</SelectImgFont>
             </SelectImgDivMin>
-            <SelectImgDivMin>
+            <SelectImgDivMin name="인천" onClick={token ? onClickLink : onClickCheck}>
               <SelectImgMin src='img/인천.png' />
               <SelectImgFont>인천</SelectImgFont>
             </SelectImgDivMin>
-            <SelectImgDivMin>
+            <SelectImgDivMin name="부산" onClick={token ? onClickLink : onClickCheck}>
               <SelectImgMin src='img/부산.png' />
               <SelectImgFont>부산</SelectImgFont>
             </SelectImgDivMin>
-            <SelectImgDivMin>
+            <SelectImgDivMin name="대구" onClick={token ? onClickLink : onClickCheck}>
               <SelectImgMin src='img/대구.png' />
               <SelectImgFont>대구</SelectImgFont>
             </SelectImgDivMin>
           </SelectImgDivInDivMin>
-          <SelectImgDivInDivMin>
+          <SelectImgDivInDivMin name="대전" onClick={token ? onClickLink : onClickCheck}>
             <SelectImgDivMin>
               <SelectImgMin src='img/대전.png' />
               <SelectImgFont>대전</SelectImgFont>
             </SelectImgDivMin>
-            <SelectImgDivMin>
+            <SelectImgDivMin name="울산" onClick={token ? onClickLink : onClickCheck}>
               <SelectImgMin src='img/울산.png' />
               <SelectImgFont>울산</SelectImgFont>
             </SelectImgDivMin>
-            <SelectImgDivMin>
+            <SelectImgDivMin name="광주" onClick={token ? onClickLink : onClickCheck}>
               <SelectImgMin src='img/광주.png' />
               <SelectImgFont>광주</SelectImgFont>
             </SelectImgDivMin>
-            <SelectImgDivMin>
+            <SelectImgDivMin name="제주도" onClick={token ? onClickLink : onClickCheck}>
               <SelectImgMin src='img/제주도.png' />
               <SelectImgFont>제주도</SelectImgFont>
             </SelectImgDivMin>
@@ -64,37 +103,37 @@ function MainPage() {
               <SelectFont>여행지</SelectFont>
               <SelectFontStory>대한민국 어디서든, 현대적인 도시부터 아름다운 자연까지 다양한 경험을 즐길 수 있어요.</SelectFontStory>
               <SelectImgDivInDiv>
-                <SelectImgDiv>
+                <SelectImgDiv name="서울" onClick={token ? onClickLink : onClickCheck}>
                   <SelectImg src='img/서울.png' />
                   <SelectImgFont>서울</SelectImgFont>
                 </SelectImgDiv>
-                <SelectImgDiv>
+                <SelectImgDiv name="인천" onClick={token ? onClickLink : onClickCheck}>
                   <SelectImg src='img/인천.png' />
                   <SelectImgFont>인천</SelectImgFont>
                 </SelectImgDiv>
-                <SelectImgDiv>
+                <SelectImgDiv name="부산" onClick={token ? onClickLink : onClickCheck}>
                   <SelectImg src='img/부산.png' />
                   <SelectImgFont>부산</SelectImgFont>
                 </SelectImgDiv>
-                <SelectImgDiv>
+                <SelectImgDiv name="대구" onClick={token ? onClickLink : onClickCheck}>
                   <SelectImg src='img/대구.png' />
                   <SelectImgFont>대구</SelectImgFont>
                 </SelectImgDiv>
               </SelectImgDivInDiv>
               <SelectImgDivInDiv>
-              <SelectImgDiv>
+              <SelectImgDiv name="대전" onClick={token ? onClickLink : onClickCheck}>
                   <SelectImg src='img/대전.png' />
                   <SelectImgFont>대전</SelectImgFont>
                 </SelectImgDiv>
-                <SelectImgDiv>
+                <SelectImgDiv name="울산" onClick={token ? onClickLink : onClickCheck}>
                   <SelectImg src='img/울산.png' />
                   <SelectImgFont>울산</SelectImgFont>
                 </SelectImgDiv>
-                <SelectImgDiv>
+                <SelectImgDiv name="광주" onClick={token ? onClickLink : onClickCheck}>
                   <SelectImg src='img/광주.png' />
                   <SelectImgFont>광주</SelectImgFont>
                 </SelectImgDiv>
-                <SelectImgDiv>
+                <SelectImgDiv name="제주도" onClick={token ? onClickLink : onClickCheck}>
                   <SelectImg src='img/제주도.png' />
                   <SelectImgFont>제주도</SelectImgFont>
                 </SelectImgDiv>

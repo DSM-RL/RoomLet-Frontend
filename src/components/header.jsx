@@ -5,12 +5,18 @@ import Logo from "../img/logo";
 import Home from "../img/home";
 
 const Header = () => {
-  const [token, setToken] = useState("")
+  
+  const onClickHome = () => {
+    window.location.assign("/");
+  };
+
   return (
     <>
       <_Header>
           <_Logo/>
-          <_Home/>
+          <div onClick={onClickHome}>
+            <_Home />
+          </div>
       </_Header>
       <Outlet />
     </>
